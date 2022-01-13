@@ -2,11 +2,11 @@
 
 const onSignUpSuccess = function () {
   $('#signUp').trigger('reset')
-  $('.message').text('User signed up successfully')
+  $('#message').text('User signed up successfully')
 }
 
 const onSignUpFailure = function () {
-  $('.message').text('Failed to sign up')
+  $('#message').text('Failed to sign up')
 }
 
 module.exports = {

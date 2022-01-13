@@ -27,30 +27,11 @@ const signOut = function () {
   })
 }
 
-const createGame = function () {
-  return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/games',
-    data: {},
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
-
-const updateGame = function (pram1, pram2, pram3, pram4) {
+const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/' + pram4,
-    data: {
-      game: {
-        cell: {
-          index: pram1 - 1,
-          value: pram2
-        },
-        over: pram3
-      }
-    },
+    url: config.apiUrl + '/change-password',
+    data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
@@ -61,6 +42,5 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  createGame,
-  updateGame
+  changePassword
 }
