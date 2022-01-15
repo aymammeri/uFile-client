@@ -22,7 +22,28 @@ const onSignIn = event => {
     .catch(ui.onSignInFailure)
 }
 
+const onUpload = event => {
+  event.preventDefault()
+
+  const form = $('#upload')[0] // You need to use standard javascript object here
+  const formData = new FormData(form)
+
+  api.upload(formData)
+    .then(ui.onUploadSuccess)
+    .catch(ui.onUploadFailure)
+}
+
+const onGetIndex = event => {
+  event.preventDefault()
+
+  api.getIndex()
+    .then(ui.onGetIndexSuccess)
+    .catch(ui.onGetIndexFailure)
+}
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onUpload,
+  onGetIndex
 }
