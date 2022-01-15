@@ -7,4 +7,6 @@ const events = require('./events')
 $(() => {
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
+  $('#upload').on('submit', events.onUpload)
+  $('#getIndex').on('click', events.onGetIndex)
 })
