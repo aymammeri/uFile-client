@@ -41,7 +41,7 @@ const changePassword = function (data) {
 const upload = function (data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/upload',
+    url: config.apiUrl + '/files',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
