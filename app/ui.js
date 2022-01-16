@@ -1,8 +1,19 @@
 const store = require('./store.js')
 
+const goToSignUp = function () {
+  $('#sign-in-section').attr('hidden', true)
+  $('#sign-up-section').attr('hidden', false)
+}
+
+const goToSignIn = function () {
+  $('#sign-up-section').attr('hidden', true)
+  $('#sign-in-section').attr('hidden', false)
+}
+
 const onSignUpSuccess = function () {
   $('#sign-up').trigger('reset')
   $('#message').text('User signed up successfully')
+  goToSignIn()
 }
 
 const onSignUpFailure = function () {
@@ -12,8 +23,9 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (response) {
   $('#sign-in').trigger('reset')
   $('#message').text('Signed-In successfully')
+  $('#sign-in-section').attr('hidden', true)
+  $('#home').attr('hidden', false)
   store.user = response.user
-  console.log(store.user.token)
 }
 
 const onSignInFailure = function () {
@@ -49,5 +61,7 @@ module.exports = {
   onUploadSuccess,
   onUploadFailure,
   onGetIndexSuccess,
-  onGetIndexFailure
+  onGetIndexFailure,
+  goToSignIn,
+  goToSignUp
 }

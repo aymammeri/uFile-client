@@ -9,4 +9,6 @@ $(() => {
   $('#sign-in').on('submit', events.onSignIn)
   $('#upload').on('submit', events.onUpload)
   $('#getIndex').on('click', events.onGetIndex)
+  $('#sign-in-link').on('click', events.onGoToSignIn)
+  $('#sign-up-link').on('click', events.onGoToSignUp)
 })
