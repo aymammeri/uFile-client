@@ -4,9 +4,9 @@
 ## wire-frames
 ===============
 
-![Sign-up/in](https://photos.app.goo.gl/jVBFHZFHx3WL17219 "Sing in/up Page")
+[Sign-up/in] (https://photos.app.goo.gl/jVBFHZFHx3WL17219)
 
-![Home](https://photos.app.goo.gl/u7AjrqDfDZu3gVP89 "Home Page")
+[Home] (https://photos.app.goo.gl/u7AjrqDfDZu3gVP89)
 
 ## User Stories
 ===============
@@ -14,5 +14,3 @@
 - As a user, I want to be able to see my already uploaded files
 
 - As a user, I want to be able to upload/download files to/from my account 
-
-Link 
