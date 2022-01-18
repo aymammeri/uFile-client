@@ -28,3 +28,5 @@
 - As a signed in user, I would like to download my files.
 
 - As a signed in user, I would like to delete my file.
+
+- As a signed in user, I would like to generate and preview QR codes for each file.
