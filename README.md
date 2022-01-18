@@ -11,6 +11,11 @@
 ## User Stories
 ===============
 
-- As a user, I want to be able to see my already uploaded files
-
-- As a user, I want to be able to upload/download files to/from my account 
+-As an unregistered user, I would like to sign up with email and password.
+-As a registered user, I would like to sign in with email and password.
+-As a signed in user, I would like to change password.
+-As a signed in user, I would like to sign out.
+-As a signed in user, I would like to upload a file.
+-As a signed in user, I would like to update the name.
+-As a signed in user, I would like to see the all my uploaded.
+-As a signed in user, I would like to delete my file.

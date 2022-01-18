@@ -42,6 +42,7 @@ const onUploadFailure = function (response) {
 }
 
 const onGetIndexSuccess = function (response) {
+  $('#files').empty()
   response.forEach(element => {
     $('#files').append(
       $('<li>', {}).text(element.name)
