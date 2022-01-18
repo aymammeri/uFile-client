@@ -25,4 +25,6 @@
 
 - As a signed in user, I would like to see the all my uploaded.
 
+- As a signed in user, I would like to download my files.
+
 - As a signed in user, I would like to delete my file.
