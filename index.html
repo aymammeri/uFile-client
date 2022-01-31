@@ -1,203 +1,140 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>uFile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <header>
-        <nav>
-          
-        </nav>
-      </header>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <main>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-        <section id="home" class="vh-100" style="background-color: #eee;" hidden>
-          <div class="container h-100">
-                <div class="card text-black" style="border-radius: 25px;">
-                  <div class="card-body p-md-5">
-                    <ul class="nav nav-pills">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                      </li>
-                    </ul>
-                      <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                        
-                        <div class="form-wrap">
-                          <h3>Ajax Image Uploader</h3>
-                              <form id="upload">
-                                  <input name="file" type="file" multiple />
-                                  <input name="__submit__" type="submit" value="Upload"/>
-                              </form>
-                              <div id="progress-wrp"><div class="progress-bar"></div ><div class="status">0%</div></div>
-                              <div id="output"><!-- error or success results --></div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-          </div>
-        </section>
-        
-        <section id="sign-in-section" class="vh-100" style="background-color: #eee;" >
-          <div class="container h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-lg-12 col-xl-11">
-                <div class="card text-black" style="border-radius: 25px;">
-                  <div class="card-body p-md-5">
-                    <div class="row justify-content-center">
-                      <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-        
-                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign in</p>
-        
-                        <form id="sign-in" class="mx-1 mx-md-4" >
-        
-                          <div class="d-flex flex-row align-items-center mb-4">
-                            <i class="fas fa-envelope fa-lg me-3 mb-4 fa-fw"></i>
-                            <div class="form-outline flex-fill mb-0">
-                              <input name="credentials[email]" type="email" class="form-control" placeholder="Your email" required />
-                              <label class="form-label" >Your Email</label>
-                            </div>
-                          </div>
-                          
-                          <div class="d-flex flex-row align-items-center mb-4">
-                            <i class="fas fa-lock fa-lg me-3 mb-4 fa-fw"></i>
-                            <div class="form-outline flex-fill mb-0">
-                              <input name="credentials[password]" type="password" class="form-control" placeholder="Your password" required />
-                              <label class="form-label" >Password</label>
-                            </div>
-                          </div>
-                            
-                          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                            <button type="submit" class="btn btn-primary btn-lg">Log In</button>
-                          </div>
-                          <p class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"> Not registered yet ? &nbsp<a id="sign-up-link" class="link-primary" style="cursor: pointer">Sign-up here</a> </p>
-                        </form>
-        
-                      </div>
-                      <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-        
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
-        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<body>
+  <section id="home" class="vh-100" style="background-color: #eee;">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light list-unstyled">
+      <div class="container-fluid">
+        <a class="navbar-brand">uFile</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img class="me-1" src="https://icongr.am/entypo/user.svg?size=18&color=currentColor" alt="" srcset="">
+            Profile</a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Update Profile</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"data-bs-target="#staticBackdrop">Change Password</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Log-Out</a></li>
+          </ul>
+        </li>
+      </div>
+
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-          </div>
-        </section>
-
-        <section id="sign-up-section" class="vh-100" style="background-color: #eee;" hidden>
-          <div class="container h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-lg-12 col-xl-11">
-                <div class="card text-black" style="border-radius: 25px;">
-                  <div class="card-body p-md-5">
-                    <div class="row justify-content-center">
-                      <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-        
-                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-        
-                        <form id="sign-up" class="mx-1 mx-md-4" >
-        
-                          <div class="d-flex flex-row align-items-center mb-4">
-                            <i class="fas fa-envelope fa-lg me-3 mb-4 fa-fw"></i>
-                            <div class="form-outline flex-fill mb-0">
-                              <input name="credentials[email]" type="email" class="form-control" placeholder="Your email" required />
-                              <label class="form-label" >Your Email</label>
-                            </div>
-                          </div>
-        
-                          <div class="d-flex flex-row align-items-center mb-4">
-                            <i class="fas fa-lock fa-lg me-3 mb-4 fa-fw"></i>
-                            <div class="form-outline flex-fill mb-0">
-                              <input name="credentials[password]" type="password" class="form-control" placeholder="Your password" required />
-                              <label class="form-label" >Password</label>
-                            </div>
-                          </div>
-        
-                          <div class="d-flex flex-row align-items-center mb-4">
-                            <i class="fas fa-key fa-lg me-3 mb-4 fa-fw"></i>
-                            <div class="form-outline flex-fill mb-0">
-                              <input name="credentials[password_confirmation]" id="confirmPassword" type="password" class="form-control" placeholder="Confirm password" required />
-                              <label class="form-label" >Repeat your password</label>
-                            </div>
-                          </div>
-                            
-                          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                            <button type="submit" class="btn btn-primary btn-lg">Register</button>
-                          </div>
-                          <p class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">Or  &nbsp<a id="sign-in-link" class="link-primary" style="cursor: pointer">Sign in here</a> </p>
-
-                        </form>
-        
-                      </div>
-                      <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-        
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
-        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="modal-body">
+              ...
             </div>
-          </div>
-        </section>
-
-        <!-- Button to Open the Modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" hidden>
-          Open modal
-        </button>
-        
-        <!-- The Modal -->
-        <div class="modal" id="myModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-        
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
-        
-              <!-- Modal body -->
-              <div class="modal-body">
-                Modal body..
-              </div>
-        
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              </div>
-        
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
             </div>
           </div>
         </div>
-        
-      </main>
+      </div>
+    </nav>
 
-      <footer>
-        <br/>
-        <h2 id="message"></h2>
-      </footer>
-    </body>
+    <div class="container bg-white mt-5 pt-2 p-2 rounded">
+      <nav style="vertical-align: middle; --bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb m-2">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="container bg-white mt-3 p-2 rounded">
+      <div class="container p-2 border-bottom border-2">
+        <button class="btn btn-primary"><img class="me-1" src="https://icongr.am/entypo/upload-to-cloud.svg?size=18&color=ffffff"> Upload</button>
+        <button class="btn btn-secondary"><img src="https://icongr.am/entypo/download.svg?size=18&color=ffffff"></button>
+        <button class="btn btn-default icon-btn borderless md-btn-flat hide-arrow dropdown-toggle p-auto"><img class="me-1" src="https://icongr.am/entypo/cog.svg?size=18&color=currentColor"></button>
+      </div>
+  
+      <div class="container mt-2 h-50 border border-dark">
+            <div class="container border border-dark">
+              <input class="me-5 form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <button type="button" class="ms-5 btn btn-sm borderless hide-arrow dropdown-toggle" data-toggle="dropdown"></button>
+              <img src="https://icongr.am/fontawesome/chrome.svg?size=50&color=currentColor">
+              <p>New File</p>
+            </div>
+        </ol>
+      </div>
+    </div>
+    
+  
+  </section>
+    
+
+    <section id="sign-in-section" class="vh-100" style="background-color: #eee;">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px;">
+              <div class="card-body p-md-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign in</p>
+
+                    <form id="sign-in" class="mx-1 mx-md-4">
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 mb-4 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input name="credentials[email]" type="email" class="form-control" placeholder="Your email"
+                            required />
+                          <label class="form-label">Your Email</label>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 mb-4 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input name="credentials[password]" type="password" class="form-control"
+                            placeholder="Your password" required />
+                          <label class="form-label">Password</label>
+                        </div>
+                      </div>
+
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+                      </div>
+                      <p class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"> Not registered yet ? &nbsp<a
+                          id="sign-up-link" class="link-primary" style="cursor: pointer">Sign-up here</a> </p>
+                    </form>
+
+                  </div>
+                  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                      class="img-fluid" alt="Sample image">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</body>
 </html>

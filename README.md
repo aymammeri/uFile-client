@@ -1,7 +1,7 @@
 # uFile
 [uFile](https://aymammeri.github.io/uFile-client/) is a cloud storage service the makes sharing files easy by generating QR codes for uploaded files 
 
-## wire-frames
+## Wire-frames
 ===============
 
 [Sign-up/in] (https://photos.app.goo.gl/jVBFHZFHx3WL17219)
