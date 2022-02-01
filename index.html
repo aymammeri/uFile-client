@@ -26,26 +26,26 @@
             Profile</a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item pe-auto" style="cursor: pointer;">Update Profile</a></li>
-            <li><a id="change-pass pe-auto" class="dropdown-item" data-bs-toggle="modal"data-bs-target="#staticBackdrop" style="cursor: pointer;">Change Password</a></li>
+            <li><a id="change-pass pe-auto" class="dropdown-item" data-bs-toggle="modal"data-bs-target="#change-pass-modal" style="cursor: pointer;">Change Password</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a id="sign-out" class="dropdown-item" style="cursor: pointer;">Log-Out</a></li>
           </ul>
         </li>
       </div>
 
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade" id="change-pass-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <form id="change-pass" class="mx-1 mx-md-4">
               <div class="modal-body">
-                <form id="change-pass" class="mx-1 mx-md-4">
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 mb-4 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input name="credentials[old]" type="password" class="form-control"
+                      <input name="passwords[old]" type="password" class="form-control"
                         placeholder="Your Old Password" required />
                       <label class="form-label">Your Old Password</label>
                     </div>
@@ -54,7 +54,7 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 mb-4 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input name="credentials[new]" type="password" class="form-control"
+                      <input name="passwords[new]" type="password" class="form-control"
                         placeholder="New password" required />
                       <label class="form-label">New Password</label>
                     </div>
@@ -63,17 +63,17 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 mb-4 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input name="credentials[conf_new]" type="password" class="form-control"
+                      <input name="passwords[conf_new]" type="password" class="form-control"
                         placeholder="Confirm New password" required />
                       <label class="form-label">Confirm Password</label>
                     </div>
                   </div>
-                </form>
               </div>
               <div class="modal-footer">
-                <button id="change-password" class="btn btn-primary">Change Password</button>
-                <button id="change-password" class="btn btn-secondary">Close</button>
+                <button type="submit" id="change-password" class="btn btn-primary">Change Password</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
+            </form>
           </div>
         </div>
       </div>
@@ -94,12 +94,9 @@
         <button class="btn btn-secondary"><img src="https://icongr.am/entypo/download.svg?size=18&color=ffffff"></button>
       </div>
   
-      <div class="container mt-2 h-50 border border-dark">
-            <ol class="container border border-dark">
-              <input class="me-5 form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <button type="button" class="ms-5 btn btn-sm borderless hide-arrow dropdown-toggle" data-toggle="dropdown"></button>
-              <img src="https://icongr.am/fontawesome/chrome.svg?size=50&color=currentColor">
-              <p>New File</p>
+      <div class="container mt-2 h-50">
+            <ol class="container list-inline" id="files">
+              
             </ol>
         </ol>
       </div>

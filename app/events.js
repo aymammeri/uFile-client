@@ -41,6 +41,12 @@ const onPassChange = function (event) {
     .catch(ui.onPassChangeFailure)
 }
 
+const onDownload = function (event) {
+  event.preventDefault()
+  const data = event.target
+  console.log(data)
+}
+
 const onUpload = function (event) {
   event.preventDefault()
 
@@ -77,6 +83,7 @@ module.exports = {
   onPassChange,
   onUpload,
   onGetIndex,
+  onDownload,
   onGoToSignIn,
   onGoToSignUp
 }

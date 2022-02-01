@@ -1,4 +1,6 @@
 const store = require('./store.js')
+const Modal = require('bootstrap').Modal
+const myModal = new Modal($('#change-pass-modal'))
 
 const onSignUpSuccess = function () {
   $('#sign-up').trigger('reset')
@@ -32,7 +34,8 @@ const onSignOutFailure = function () {
 }
 
 const onPassChangeSuccess = function () {
-  $('change-pass').trigger('reset')
+  $('#change-pass').trigger('reset')
+  myModal._hideModal()
   $('#message').text('Password Changed Successfully')
 }
 
@@ -51,15 +54,18 @@ const onUploadFailure = function (response) {
 
 const onGetIndexSuccess = function (response) {
   $('#files').empty()
-  response.map(element => {
-    return $('#files').append(
-      $('<li>', {}).text(element.name)
-    )
+  response.forEach((element) => {
+    $('#files').append(`<li class="col-sm-6 col-md-4 col-lg-2 list-inline-item justify-content-center">
+        <div class="container">
+          <p>${element.name}</p>
+          <button class="btn btn-primary download-file" data-id="${element._id}">Download</button>
+        </div>
+    </li>`, {})
   })
 }
 
 const onGetIndexFailure = function (response) {
-  $('#files').html('Error couldn\'t get files')
+  $('#files').html("Error couldn't get files")
 }
 
 const goToSignUp = function () {
