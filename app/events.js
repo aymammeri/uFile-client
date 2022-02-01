@@ -43,8 +43,7 @@ const onPassChange = function (event) {
 
 const onDownload = function (event) {
   event.preventDefault()
-  const data = event.target
-  console.log(data)
+  console.log(event.target)
 }
 
 const onUpload = function (event) {
@@ -53,7 +52,7 @@ const onUpload = function (event) {
   const form = $('#upload')[0] // You need to use standard javascript object here
   const formData = new FormData(form)
 
-  api.upload(formData)
+  api.uploadFile(formData)
     .then(ui.onUploadSuccess)
     .catch(ui.onUploadFailure)
 }

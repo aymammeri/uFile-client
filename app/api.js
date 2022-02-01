@@ -38,7 +38,17 @@ const changePassword = function (data) {
   })
 }
 
-const upload = function (data) {
+const getIndex = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/files',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const uploadFile = function (data) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/files',
@@ -70,20 +80,31 @@ const upload = function (data) {
   })
 }
 
-const getIndex = function () {
+const downloadFile = function (id) {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/files',
+    url: config.apiUrl + '/download/' + id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   })
 }
 
-const downloadFile = function (id) {
+const renameFile = function (data) {
   return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/download/' + id,
+    method: 'PATCH',
+    url: config.apiUrl + '/change-password',
+    data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const deleteFile = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/sign-out',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
@@ -95,7 +116,9 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  upload,
   getIndex,
-  downloadFile
+  uploadFile,
+  downloadFile,
+  renameFile,
+  deleteFile
 }

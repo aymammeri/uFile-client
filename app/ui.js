@@ -1,6 +1,7 @@
 const store = require('./store.js')
 const Modal = require('bootstrap').Modal
 const myModal = new Modal($('#change-pass-modal'))
+const events = require('./events')
 
 const onSignUpSuccess = function () {
   $('#sign-up').trigger('reset')
@@ -54,14 +55,21 @@ const onUploadFailure = function (response) {
 
 const onGetIndexSuccess = function (response) {
   $('#files').empty()
-  response.forEach((element) => {
-    $('#files').append(`<li class="col-sm-6 col-md-4 col-lg-2 list-inline-item justify-content-center">
-        <div class="container">
+  response.forEach(element => {
+    $('#files').append(`<li>
+        <div class="container d-flex">
           <p>${element.name}</p>
-          <button class="btn btn-primary download-file" data-id="${element._id}">Download</button>
-        </div>
+          <a class="nav-link dropdown-toggle" id="fileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">...</a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="fileDropDown">
+            <li><a class="dropdown-item pe-auto renameFile" data="${element._id}" style="cursor: pointer;">Rename file</a></li>
+            <li><a class="dropdown-item pe-auto deleteFile" data="${element._id}" style="cursor: pointer;">Delete File</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item pe-auto downloadFile" data="${element._id}" style="cursor: pointer;">Download file</a></li>
+          </ul>
+        </div>  
     </li>`, {})
   })
+  $('.downloadFile').on('click', events.onDownload)
 }
 
 const onGetIndexFailure = function (response) {

@@ -13,5 +13,5 @@ $(() => {
   $('#getIndex').on('click', events.onGetIndex)
   $('#sign-in-link').on('click', events.onGoToSignIn)
   $('#sign-up-link').on('click', events.onGoToSignUp)
-  $('.download-file').on('click', events.onDownload)
+  $('.downloadFile').on('click', events.onDownload)
 })
