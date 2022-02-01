@@ -7,6 +7,8 @@ const events = require('./events')
 $(() => {
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
+  $('#sign-out').on('click', events.onSignOut)
+  $('#change-pass').on('submit', events.onPassChange)
   $('#upload').on('submit', events.onUpload)
   $('#getIndex').on('click', events.onGetIndex)
   $('#sign-in-link').on('click', events.onGoToSignIn)

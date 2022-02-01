@@ -80,11 +80,22 @@ const getIndex = function () {
   })
 }
 
+const downloadFile = function (id) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/download/' + id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   upload,
-  getIndex
+  getIndex,
+  downloadFile
 }

@@ -2,16 +2,6 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../lib/get-form-fields.js')
 
-const onGoToSignUp = function (event) {
-  event.preventDefault()
-  ui.goToSignUp()
-}
-
-const onGoToSignIn = function (event) {
-  event.preventDefault()
-  ui.goToSignIn()
-}
-
 const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
@@ -27,7 +17,28 @@ const onSignIn = function (event) {
   const data = getFormFields(form)
   api.signIn(data)
     .then(ui.onSignInSuccess)
+    .then(() => {
+      api.getIndex()
+        .then(res => ui.onGetIndexSuccess(res))
+        .catch(ui.onGetIndexFailure)
+    })
     .catch(ui.onSignInFailure)
+}
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
+const onPassChange = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.changePassword(data)
+    .then(ui.onPassChangeSuccess)
+    .catch(ui.onPassChangeFailure)
 }
 
 const onUpload = function (event) {
@@ -45,13 +56,25 @@ const onGetIndex = function (event) {
   event.preventDefault()
 
   api.getIndex()
-    .then(ui.onGetIndexSuccess)
+    .then(res => ui.onGetIndexSuccess(res))
     .catch(ui.onGetIndexFailure)
+}
+
+const onGoToSignUp = function (event) {
+  event.preventDefault()
+  ui.goToSignUp()
+}
+
+const onGoToSignIn = function (event) {
+  event.preventDefault()
+  ui.goToSignIn()
 }
 
 module.exports = {
   onSignUp,
   onSignIn,
+  onSignOut,
+  onPassChange,
   onUpload,
   onGetIndex,
   onGoToSignIn,
