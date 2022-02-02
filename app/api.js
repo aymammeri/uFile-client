@@ -71,8 +71,13 @@ const uploadFile = function (data) {
           }
           // update progress bar
           $('#output').html('Uploading...')
+          $('#output').show()
+          $('#progress-wrp').attr('hidden', false)
           $('#progress-wrp' + ' .progress-bar').css('width', +percent + '%')
           $('#progress-wrp' + ' .status').text(percent + '%')
+          if (percent === 100) {
+            $('#output').html('Successfully Uploaded')
+          }
         }, true)
       }
       return xhr
@@ -90,10 +95,10 @@ const downloadFile = function (id) {
   })
 }
 
-const renameFile = function (data) {
+const renameFile = function (data, id) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/change-password',
+    url: config.apiUrl + '/files/' + id,
     data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -101,10 +106,10 @@ const renameFile = function (data) {
   })
 }
 
-const deleteFile = function () {
+const deleteFile = function (id) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/sign-out',
+    url: config.apiUrl + '/files/' + id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
