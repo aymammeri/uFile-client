@@ -80,6 +80,11 @@ const onPassChangeFailure = function () {
 const onUploadSuccess = function () {
   $('#upload').trigger('reset')
   // $('#upload')[0].reset()
+  $('#message').html('File created Successfully')
+  $('#message').show()
+  setTimeout(() => {
+    $('#message').hide()
+  }, 1500)
   api.getIndex()
     .then(onGetIndexSuccess)
     .catch(onGetIndexFailure)
