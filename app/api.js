@@ -55,33 +55,33 @@ const uploadFile = function (data) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data,
-    processData: false,
-    contentType: false,
-    xhr: function () {
-      // upload Progress
-      const xhr = $.ajaxSettings.xhr()
-      if (xhr.upload) {
-        xhr.upload.addEventListener('progress', function (event) {
-          let percent = 0
-          const position = event.loaded || event.position
-          const total = event.total
-          if (event.lengthComputable) {
-            percent = Math.ceil(position / total * 100)
-          }
-          // update progress bar
-          $('#output').html('Uploading...')
-          $('#output').show()
-          $('#progress-wrp').attr('hidden', false)
-          $('#progress-wrp' + ' .progress-bar').css('width', +percent + '%')
-          $('#progress-wrp' + ' .status').text(percent + '%')
-          if (percent === 100) {
-            $('#output').html('Successfully Uploaded')
-          }
-        }, true)
-      }
-      return xhr
-    }
+    data
+    // processData: false,
+    // contentType: false,
+    // xhr: function () {
+    //   // upload Progress
+    //   const xhr = $.ajaxSettings.xhr()
+    //   if (xhr.upload) {
+    //     xhr.upload.addEventListener('progress', function (event) {
+    //       let percent = 0
+    //       const position = event.loaded || event.position
+    //       const total = event.total
+    //       if (event.lengthComputable) {
+    //         percent = Math.ceil(position / total * 100)
+    //       }
+    //       // update progress bar
+    //       $('#output').html('Uploading...')
+    //       $('#output').show()
+    //       $('#progress-wrp').attr('hidden', false)
+    //       $('#progress-wrp' + ' .progress-bar').css('width', +percent + '%')
+    //       $('#progress-wrp' + ' .status').text(percent + '%')
+    //       if (percent === 100) {
+    //         $('#output').html('Successfully Uploaded')
+    //       }
+    //     }, true)
+    //   }
+    //   return xhr
+    // }
   })
 }
 

@@ -51,11 +51,12 @@ const onGetIndex = function (event) {
 
 const onUploadFile = function (event) {
   event.preventDefault()
-  const form = $('#upload')[0] // You need to use standard javascript object here
-  const formData = new FormData(form)
-  if ($('#filesToUpload').get(0).files.length === 0) {
-    return
-  }
+  const formData = getFormFields(event.target)
+  // const form = $('#upload')[0] // You need to use standard javascript object here
+  // const formData = new FormData(form)
+  // if ($('#filesToUpload').get(0).files.length === 0) {
+  //   return
+  // }
   api.uploadFile(formData)
     .then(ui.onUploadSuccess)
     .catch(ui.onUploadFailure)

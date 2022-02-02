@@ -77,17 +77,20 @@ const onPassChangeFailure = function () {
   }, 1500)
 }
 
-const onUploadSuccess = function (response) {
-  $('#upload')[0].reset()
+const onUploadSuccess = function () {
+  $('#upload').trigger('reset')
+  // $('#upload')[0].reset()
   api.getIndex()
-    .then(res => {
-      $('#progress-wrp').attr('hidden', true)
-      $('#output').html('File uploaded Successfully')
-      setTimeout(() => {
-        $('#output').hide()
-      }, 2000)
-      onGetIndexSuccess(res)
-    })
+    .then(onGetIndexSuccess)
+    .catch(onGetIndexFailure)
+    // .then(res => {
+    //   $('#progress-wrp').attr('hidden', true)
+    //   $('#output').html('File uploaded Successfully')
+    //   setTimeout(() => {
+    //     $('#output').hide()
+    //   }, 2000)
+    //   onGetIndexSuccess(res)
+    // })
 }
 
 const onUploadFailure = function (response) {
